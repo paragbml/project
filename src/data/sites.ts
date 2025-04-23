@@ -36,7 +36,7 @@ export const religiousSites: ReligiousSite[] = [
     name: "Haji Ali Dargah",
     religion: "Islam",
     location: "Mumbai, Maharashtra",
-    image: "https://images.pexels.com/photos/13580592/pexels-photo-13580592.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image: "https://t3.ftcdn.net/jpg/03/53/42/98/360_F_353429872_tuQz6mjyOmGl0NHyOhBl46qTc1MxqrDZ.jpg",
     description: "A floating mosque and tomb built in the memory of Sayed Peer Haji Ali Shah Bukhari.",
     threeDViewLink: "#",
     detailedInfo: "Haji Ali Dargah is a mosque and dargah (tomb) located on an islet off the coast of Worli in Mumbai, India. It contains the tomb of Sayed Peer Haji Ali Shah Bukhari, a wealthy Muslim merchant who renounced worldly possessions before embarking on a pilgrimage to Mecca. According to legends, Haji Ali died during his journey to Mecca and the casket carrying his body miraculously floated back to Mumbai. The dargah was constructed in 1431 in memory of the wealthy Muslim merchant who gave up all his worldly possessions before making a pilgrimage to Mecca. The structure has an Indo-Islamic architecture and contains the tomb of the saint. Situated about 500 yards from the shoreline in the middle of Worli Bay, the dargah is linked to the city by a narrow causeway that is submerged during high tide, making it accessible only during low tide."
@@ -46,7 +46,7 @@ export const religiousSites: ReligiousSite[] = [
     name: "Global Vipassana Pagoda",
     religion: "Buddhism",
     location: "Mumbai, Maharashtra",
-    image: "https://images.pexels.com/photos/8917510/pexels-photo-8917510.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/19/88/12/global-vipassana-pagoda.jpg?w=1100&h=-1&s=1",
     description: "A meditation dome inspired by Myanmar's Shwedagon Pagoda, built as a tribute to Gautama Buddha.",
     threeDViewLink: "#",
     detailedInfo: "The Global Vipassana Pagoda is a meditation dome near Gorai, Mumbai, India. The monument was inaugurated in 2009 and serves as a monument of peace and harmony. The pagoda contains the world's largest stone dome built without supporting pillars, and it enshrines relics of Gautama Buddha. The design of the pagoda is inspired by the Shwedagon Pagoda in Myanmar (Burma). The purpose of the monument is to express gratitude to the Buddha for dispensing a universal teaching, as well as to Vipassana teacher S. N. Goenka for reintroducing the technique to India, the land of its origin. The pagoda is built as a meditation hall for thousands of people to practice Vipassana, a meditation technique rediscovered by the Buddha. The inner dome houses small cells where individuals can practice meditation in isolation."
@@ -56,7 +56,7 @@ export const religiousSites: ReligiousSite[] = [
     name: "Dhamek Stupa",
     religion: "Buddhism",
     location: "Sarnath, Uttar Pradesh",
-    image: "https://images.pexels.com/photos/9751650/pexels-photo-9751650.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image: "https://media-cdn.tripadvisor.com/media/photo-s/15/ee/05/3f/the-stupa.jpg",
     description: "A massive stupa marking the spot where Buddha gave his first sermon after attaining enlightenment.",
     threeDViewLink: "#",
     detailedInfo: "Dhamek Stupa is a massive stupa located at Sarnath, 13 km away from Varanasi in the state of Uttar Pradesh, India. It marks the spot where Buddha gave his first sermon to his five disciples after attaining enlightenment, revealing the eightfold path to nirvana. The original stupa was commissioned by the great Mauryan emperor Ashoka in 249 BCE, but the present structure dates from around 500 CE. The current form of the stupa is a solid cylinder of bricks and stone reaching a height of 43.6 meters and a diameter of 28 meters. The stone facing of the walls has delicate floral carvings from the Gupta period. This sacred place is of immense significance to Buddhists worldwide as it represents the beginning of Buddhist teachings and the wheel of dharma (Dharmachakra)."
@@ -66,7 +66,7 @@ export const religiousSites: ReligiousSite[] = [
     name: "Mount Mary Church",
     religion: "Christianity",
     location: "Mumbai, Maharashtra",
-    image: "https://images.pexels.com/photos/158092/pexels-photo-158092.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image: "https://media.assettype.com/knocksense%2F2023-07%2F38883b28-fa80-4aa9-a899-f80afbd23240%2FMount_Mary_13.webp?w=1200&auto=format%2Ccompress&fit=max",
     description: "A Roman Catholic Basilica dedicated to the Blessed Virgin Mary, drawing devotees from all faiths.",
     threeDViewLink: "#",
     detailedInfo: "Mount Mary Church, officially known as the Basilica of Our Lady of the Mount, is a Roman Catholic Basilica located in Bandra, Mumbai. The church is one of the most visited churches in Mumbai and is particularly crowded during the annual Bandra Fair, which is held on the Sunday following the Nativity of Mary (September 8). The history of the church dates back to the 16th century when the Portuguese built a chapel on this site. The statue of Mother Mary, which is now venerated at the basilica, was brought by Portuguese sailors from Portugal. What makes Mount Mary unique is that it attracts devotees from all faiths who come to pray for various intentions. The church's location on a hill offers panoramic views of the Arabian Sea, and its Gothic architecture, with imposing spires and intricate stained glass windows, makes it a notable landmark in Mumbai."
@@ -76,7 +76,7 @@ export const religiousSites: ReligiousSite[] = [
     name: "Ajmer Sharif Dargah",
     religion: "Islam",
     location: "Ajmer, Rajasthan",
-    image: "https://images.pexels.com/photos/6382664/pexels-photo-6382664.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image: "https://c.ndtvimg.com/2024-11/rglfs0j_ajmer-sharif-dargah_625x300_28_November_24.jpg?im=FeatureCrop,algorithm=dnn,width=773,height=435",
     description: "One of the most sacred Sufi shrines, dedicated to the revered saint Khwaja Moinuddin Chishti.",
     threeDViewLink: "#",
     detailedInfo: "The Ajmer Sharif Dargah is a Sufi shrine of the revered saint, Khwaja Moinuddin Chishti, located in Ajmer, Rajasthan. The shrine has been a center of spiritual and religious harmony for over 800 years. Known as 'Gharib Nawaz' (Benefactor of the Poor), the saint came to Ajmer from Persia in 1192 and spent the remainder of his life there. The dargah complex includes several significant structures, including the Buland Darwaza, built by Sultan Mahmud Khilji, the Akbari Mosque built by Mughal Emperor Akbar, and the Nizam Gate. The shrine is visited by millions of devotees every year, regardless of their faith, making it a symbol of religious harmony and unity. The annual Urs festival, commemorating the saint's death anniversary, attracts followers from all over the world."

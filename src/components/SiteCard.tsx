@@ -39,7 +39,7 @@ const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
 
   return (
     <div
-      className="relative h-full rounded-xl overflow-hidden shadow-lg transition-all duration-500 transform hover:-translate-y-2 group bg-white/30 dark:bg-gray-800/30 backdrop-blur-md cursor-pointer"
+      className="relative h-full rounded-xl overflow-hidden shadow-lg transition-all duration-500 transform group bg-white/30 dark:bg-gray-800/30 backdrop-blur-md cursor-pointer"
       onClick={() => onViewDetails(site)}
     >
       {/* Religion Tag */}
@@ -59,8 +59,8 @@ const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
 
       {/* Content */}
       <div className="p-5 relative z-20">
-        <h2 className="text-xl font-serif font-bold mb-2 text-gray-900 dark:text-white">{site.name}</h2>
-        <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">{site.location}</p>
+        <h3 className="text-xl font-serif font-bold mb-1 text-gray-900 dark:text-white">{site.name}</h3>
+        <p className="text-sm text-amber-600 dark:text-amber-400 mb-2">{site.location}</p>
         <p className="text-sm line-clamp-3 mb-4 text-gray-700 dark:text-gray-300">{site.description}</p>
 
         {/* Buttons */}
@@ -85,7 +85,6 @@ const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
           </a>
         </div>
       </div>
-
       {/* HOVER OVERLAY COMPLETELY REMOVED */}
     </div>
   );

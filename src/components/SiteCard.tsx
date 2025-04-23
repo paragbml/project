@@ -39,6 +39,15 @@ const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
     }
   };
 
+  const overlayStyle = {
+    pointerEvents: 'none',
+    opacity: isHovered ? 1 : 0,
+    height: isHovered ? 'auto' : 0,
+    paddingTop: isHovered ? 'inherit' : 0,
+    paddingBottom: isHovered ? 'inherit' : 0,
+    overflow: 'hidden',
+  };
+
   return (
     <div
       className="relative h-full rounded-xl overflow-hidden shadow-lg transition-all duration-500 transform hover:-translate-y-2 group bg-white/30 dark:bg-gray-800/30 backdrop-blur-md cursor-pointer"
@@ -90,15 +99,14 @@ const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
         </div>
       </div>
 
-      {/* Conditionally Render the Hover Overlay */}
-      {isHovered && (
-        <div
-          className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6 transition-opacity duration-300 opacity-100"
-        >
-          <h3 className="text-2xl font-bold text-white">{site.name}</h3>
-          <p className="text-amber-400 mb-4">{site.location}</p>
-        </div>
-      )}
+      {/* Hover Overlay with dynamic styling */}
+      <div
+        className={`absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6 transition-opacity duration-300`}
+        style={overlayStyle}
+      >
+        <h3 className="text-2xl font-bold text-white">{site.name}</h3>
+        <p className="text-amber-400 mb-4">{site.location}</p>
+      </div>
     </div>
   );
 };

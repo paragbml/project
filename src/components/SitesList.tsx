@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { ReligiousSite } from '../types';
 import SiteCard from './SiteCard';
-import SiteDetail from './SiteDetail';
 import { Filter } from 'lucide-react';
 
 interface SitesListProps {
@@ -9,7 +8,6 @@ interface SitesListProps {
 }
 
 const SitesList: React.FC<SitesListProps> = ({ sites }) => {
-  const [selectedSite, setSelectedSite] = useState<ReligiousSite | null>(null);
   const [selectedReligion, setSelectedReligion] = useState<string>('all');
   const [filteredSites, setFilteredSites] = useState<ReligiousSite[]>(sites);
   
@@ -21,16 +19,6 @@ const SitesList: React.FC<SitesListProps> = ({ sites }) => {
     
     setFilteredSites(filtered);
   }, [selectedReligion, sites]);
-  
-  const handleViewDetails = (site: ReligiousSite) => {
-    setSelectedSite(site);
-    document.body.style.overflow = 'hidden';
-  };
-  
-  const handleCloseDetails = () => {
-    setSelectedSite(null);
-    document.body.style.overflow = '';
-  };
   
   const getReligions = () => {
     const religionsSet = new Set(sites.map(site => site.religion));
@@ -83,7 +71,7 @@ const SitesList: React.FC<SitesListProps> = ({ sites }) => {
                 key={site.id} 
                 className="h-full transform transition-transform duration-300 hover:-translate-y-2"
               >
-                <SiteCard site={site} onViewDetails={handleViewDetails} />
+                <SiteCard site={site} />
               </div>
             ))}
           </div>
@@ -93,11 +81,6 @@ const SitesList: React.FC<SitesListProps> = ({ sites }) => {
           </div>
         )}
       </div>
-      
-      {/* Site Detail Modal */}
-      {selectedSite && (
-        <SiteDetail site={selectedSite} onClose={handleCloseDetails} />
-      )}
     </section>
   );
 };

@@ -9,8 +9,8 @@ export const religiousSites: ReligiousSite[] = [
     image: "https://images.pexels.com/photos/5458388/pexels-photo-5458388.jpeg?auto=compress&cs=tinysrgb&w=600",
     description: "The Golden Temple (Harmandir Sahib) is the holiest shrine in Sikhism, known for its stunning gold-plated exterior.",
     threeDViewLink: "https://www.goldentempleamritsar.org/famous-temples-in-india/amritsar/golden-temple/360-degree-view.php",
-    detailsLink: "/golden-temple", // Add this
-    detailedInfo: "..." // keep existing
+    detailsLink: "https://www.goldentempleamritsar.org/famous-temples-in-india/amritsar/golden-temple/360-degree-view.php", // Add this
+    detailedInfo: "https://www.goldentempleamritsar.org/famous-temples-in-india/amritsar/golden-temple/360-degree-view.php" // keep existing
   },
   {
     id: "basilica-of-bom-jesus",

@@ -90,14 +90,15 @@ const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
         </div>
       </div>
 
-      {/* Conditional Hover Overlay Opacity */}
-      <div
-        className={`absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6 transition-opacity duration-300 ${isHovered ? 'opacity-100' : ''}`}
-        style={{ pointerEvents: 'none' }}
-      >
-        <h3 className="text-2xl font-bold text-white">{site.name}</h3>
-        <p className="text-amber-400 mb-4">{site.location}</p>
-      </div>
+      {/* Conditionally Render the Hover Overlay */}
+      {isHovered && (
+        <div
+          className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6 transition-opacity duration-300 opacity-100"
+        >
+          <h3 className="text-2xl font-bold text-white">{site.name}</h3>
+          <p className="text-amber-400 mb-4">{site.location}</p>
+        </div>
+      )}
     </div>
   );
 };

@@ -37,6 +37,7 @@ export const religiousSites: ReligiousSite[] = [
     name: "Haji Ali Dargah",
     religion: "Islam",
     location: "Mumbai, Maharashtra",
-    image: "https://t3.ftcdn.net/jpg/03/53/42/98/360_F_353429872_tuQz6"
-  // Add detailsLink to all other sites similarly
+    image: "https://t3.ftcdn.net/jpg/03/53/42/98/360_F_353429872_tuQz6",
+    detailsLink: "https://en.wikipedia.org/wiki/Haji_Ali_Dargah" // Added a detailsLink as it was missing
+  }
 ];

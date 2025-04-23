@@ -41,8 +41,8 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center">
             <Compass className="h-8 w-8 text-amber-600 dark:text-amber-500" />
-            <h1 className={`ml-2 text-xl md:text-2xl font-serif font-bold transition-colors ${scrolled ? 'text-white text-white' : 'text-white text-white'}`}>
-              Religious <span className="text-amber-600 dark:text-amber-500">Harmony</span>
+            <h1 className={`ml-2 text-xl md:text-2xl font-serif font-bold transition-colors ${scrolled ? 'text-gray-800 dark:text-white' : 'text-white'}`}>
+              Religious <span className="text-amber-600 dark:text-amber-500">Harmony</span> India
             </h1>
           </div>
           
@@ -61,13 +61,13 @@ const Header: React.FC = () => {
             <nav className="hidden md:block">
               <ul className="flex space-x-8">
                 <li>
-                  <a href="#" className={`font-medium transition-colors hover:text-amber-600 dark:hover:text-amber-500 ${scrolled ? 'text-gray-700 dark:text-gray-200' : 'text-gray-700 dark:text-white'}`}>Home</a>
+                  <a href="#" className={`font-medium transition-colors hover:text-amber-600 dark:hover:text-amber-500 ${scrolled ? 'text-gray-700 dark:text-gray-200' : 'text-white'}`}>Home</a>
                 </li>
                 <li>
-                  <a href="#sites" className={`font-medium transition-colors hover:text-amber-600 dark:hover:text-amber-500 ${scrolled ? 'text-gray-700 dark:text-gray-200' : 'text-gray-700 dark:text-white'}`}>Sacred Sites</a>
+                  <a href="#sites" className={`font-medium transition-colors hover:text-amber-600 dark:hover:text-amber-500 ${scrolled ? 'text-gray-700 dark:text-gray-200' : 'text-white'}`}>Sacred Sites</a>
                 </li>
                 <li>
-                  <a href="#about" className={`font-medium transition-colors hover:text-amber-600 dark:hover:text-amber-500 ${scrolled ? 'text-gray-700 dark:text-gray-200' : 'text-gray-700 dark:text-white'}`}>About</a>
+                  <a href="#about" className={`font-medium transition-colors hover:text-amber-600 dark:hover:text-amber-500 ${scrolled ? 'text-gray-700 dark:text-gray-200' : 'text-white'}`}>About</a>
                 </li>
               </ul>
             </nav>
@@ -78,8 +78,8 @@ const Header: React.FC = () => {
               aria-label="Toggle menu"
             >
               {isMenuOpen ? 
-                <X className={`h-6 w-6 ${scrolled ? 'text-gray-800 dark:text-white' : 'text-gray-800 dark:text-white'}`} /> : 
-                <Menu className={`h-6 w-6 ${scrolled ? 'text-gray-800 dark:text-white' : 'text-gray-800 dark:text-white'}`} />
+                <X className={`h-6 w-6 ${scrolled ? 'text-gray-800 dark:text-white' : 'text-white'}`} /> : 
+                <Menu className={`h-6 w-6 ${scrolled ? 'text-gray-800 dark:text-white' : 'text-white'}`} />
               }
             </button>
           </div>

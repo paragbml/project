@@ -39,6 +39,8 @@ const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
     }
   };
 
+  const overlayOpacityClass = isHovered ? 'opacity-100' : 'opacity-0';
+
   return (
     <div
       className="relative h-full rounded-xl overflow-hidden shadow-lg transition-all duration-500 transform hover:-translate-y-2 group bg-white/30 dark:bg-gray-800/30 backdrop-blur-md cursor-pointer"
@@ -90,9 +92,9 @@ const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
         </div>
       </div>
 
-      {/* Hover Overlay - Removed default opacity-0 */}
+      {/* Hover Overlay - Controlled Opacity */}
       <div
-        className={`absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6 transition-opacity duration-300 group-hover:opacity-100`}
+        className={`absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6 transition-opacity duration-300 ${overlayOpacityClass}`}
         style={{ pointerEvents: 'none' }}
       >
         <h3 className="text-2xl font-bold text-white">{site.name}</h3>

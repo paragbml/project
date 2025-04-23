@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ReligiousSite } from '../types';
 import SiteCard from './SiteCard';
 import { Filter } from 'lucide-react';
+import SiteDetail from './SiteDetail'; // Import SiteDetail
 
 interface SitesListProps {
   sites: ReligiousSite[];
@@ -10,22 +11,31 @@ interface SitesListProps {
 const SitesList: React.FC<SitesListProps> = ({ sites }) => {
   const [selectedReligion, setSelectedReligion] = useState<string>('all');
   const [filteredSites, setFilteredSites] = useState<ReligiousSite[]>(sites);
-  
+  const [selectedSite, setSelectedSite] = useState<ReligiousSite | null>(null);
+
   React.useEffect(() => {
     const filtered = sites.filter(site => {
       const matchesReligion = selectedReligion === 'all' || site.religion.toLowerCase() === selectedReligion.toLowerCase();
       return matchesReligion;
     });
-    
+
     setFilteredSites(filtered);
   }, [selectedReligion, sites]);
-  
+
   const getReligions = () => {
     const religionsSet = new Set(sites.map(site => site.religion));
     return Array.from(religionsSet);
   };
-  
+
   const religions = getReligions();
+
+  const handleViewDetails = (site: ReligiousSite) => {
+    setSelectedSite(site);
+  };
+
+  const handleCloseDetails = () => {
+    setSelectedSite(null);
+  };
 
   return (
     <section id="sites" className="py-20 bg-transparent backdrop-blur-md">
@@ -36,7 +46,7 @@ const SitesList: React.FC<SitesListProps> = ({ sites }) => {
         <p className="text-center text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12">
           Explore the diverse religious landmarks that showcase India's rich cultural heritage and spiritual traditions.
         </p>
-        
+
         {/* Filter */}
         <div className="flex justify-center mb-8">
           <div className="relative w-full max-w-xs">
@@ -62,16 +72,16 @@ const SitesList: React.FC<SitesListProps> = ({ sites }) => {
             </div>
           </div>
         </div>
-        
+
         {/* Sites Grid */}
         {filteredSites.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredSites.map(site => (
-              <div 
-                key={site.id} 
+              <div
+                key={site.id}
                 className="h-full transform transition-transform duration-300 hover:-translate-y-2"
               >
-                <SiteCard site={site} />
+                <SiteCard site={site} onViewDetails={handleViewDetails} /> {/* Pass down onViewDetails */}
               </div>
             ))}
           </div>
@@ -81,6 +91,9 @@ const SitesList: React.FC<SitesListProps> = ({ sites }) => {
           </div>
         )}
       </div>
+
+      {/* Modal for Site Details */}
+      {selectedSite && <SiteDetail site={selectedSite} onClose={handleCloseDetails} />}
     </section>
   );
 };

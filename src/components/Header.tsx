@@ -41,7 +41,7 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center">
             <Compass className="h-8 w-8 text-amber-600 dark:text-amber-500" />
-            <h1 className={`ml-2 text-xl md:text-2xl font-serif font-bold transition-colors ${scrolled ? 'dark:text-white dark:text-white' : 'dark:text-white dark:text-white'}`}>
+            <h1 className={`ml-2 text-xl md:text-2xl font-serif font-bold transition-colors ${scrolled ? 'text-white text-white' : 'text-white text-white'}`}>
               Religious <span className="text-amber-600 dark:text-amber-500">Harmony</span>
             </h1>
           </div>

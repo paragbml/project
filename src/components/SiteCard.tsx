@@ -51,7 +51,7 @@ const SiteCard: React.FC<SiteCardProps> = ({ site }) => {
         {/* Buttons */}
         <div className="flex space-x-2">
           <a 
-            href={`/sites/${site.id}`} // Update this to your detail page URL structure
+            href={site.detailsLink} // Direct link to details page
             className="flex-1 flex items-center justify-center py-2 px-4 bg-amber-600/90 hover:bg-amber-700 text-white text-sm font-medium rounded-md transition-colors backdrop-blur-sm"
           >
             <Info className="h-4 w-4 mr-2" />

@@ -26,7 +26,7 @@ export const religiousSites: ReligiousSite[] = [
     name: "Kashi Vishwanath Temple",
     religion: "Hinduism",
     location: "Varanasi, Uttar Pradesh",
-    image: "https://images.pexels.com/photos/9482122/pexels-photo-9482122.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdUOPWHNcdc5AI6HyCVF1PgNt2wROEbKadvw&s",
     description: "One of the most famous Hindu temples dedicated to Lord Shiva, located on the western bank of the holy river Ganga.",
     threeDViewLink: "#",
     detailedInfo: "The Kashi Vishwanath Temple is one of the most famous Hindu temples dedicated to Lord Shiva and is located in Varanasi, Uttar Pradesh, India. The temple stands on the western bank of the holy river Ganga and is one of the twelve Jyotirlingas, the holiest of Shiva temples. The main deity is known by the name Vishwanatha or Vishweshwara, meaning Ruler of the Universe. The temple has been destroyed and rebuilt several times throughout history. The current structure was built on an adjacent site by the Maratha ruler, Ahilya Bai Holkar of Indore in 1780. In 2019, the Kashi Vishwanath Corridor project was initiated to create a pathway from the temple to the Ganges River, which has transformed the area around the temple into a spacious complex with multiple facilities for pilgrims and tourists."

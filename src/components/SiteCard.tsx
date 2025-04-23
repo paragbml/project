@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Info, Cube } from 'lucide-react';
 
 interface ReligiousSite {
@@ -18,8 +18,6 @@ interface SiteCardProps {
 }
 
 const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
   const getReligionColor = (religion: string) => {
     switch (religion.toLowerCase()) {
       case 'hinduism':
@@ -39,17 +37,9 @@ const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
     }
   };
 
-  const overlayStyle = {
-    pointerEvents: 'none',
-    opacity: isHovered ? 1 : 0,
-    display: isHovered ? 'flex' : 'none', // Ensure it's not in the layout when not hovered
-  };
-
   return (
     <div
       className="relative h-full rounded-xl overflow-hidden shadow-lg transition-all duration-500 transform hover:-translate-y-2 group bg-white/30 dark:bg-gray-800/30 backdrop-blur-md cursor-pointer"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
       onClick={() => onViewDetails(site)}
     >
       {/* Religion Tag */}
@@ -96,14 +86,7 @@ const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
         </div>
       </div>
 
-      {/* Hover Overlay - Controlled Display */}
-      <div
-        className={`absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6 transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}
-        style={overlayStyle}
-      >
-        <h3 className="text-2xl font-bold text-white">{site.name}</h3>
-        <p className="text-amber-400 mb-4">{site.location}</p>
-      </div>
+      {/* HOVER OVERLAY COMPLETELY REMOVED */}
     </div>
   );
 };

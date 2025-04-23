@@ -1,49 +1,126 @@
-import React from 'react';
-import { ChevronDown } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Compass, Menu, X, Sun, Moon } from 'lucide-react';
 
 const Hero: React.FC = () => {
-  const scrollToSites = () => {
-    const sitesSection = document.getElementById('sites');
-    if (sitesSection) {
-      sitesSection.scrollIntoView({ behavior: 'smooth' });
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
     }
+  }, [isDarkMode]);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
   };
 
   return (
-    <div className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background image with overlay */}
-      <div className="absolute inset-0 bg-cover bg-center z-0" 
-           style={{ 
-             backgroundImage: 'url(https://images.pexels.com/photos/6521718/pexels-photo-6521718.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)',
-             backgroundPosition: 'center 30%'
-           }}>
-        <div className="absolute inset-0 bg-black opacity-50 dark:opacity-60"></div>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-md' : 'bg-transparent'}`}>
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between py-4">
+          <div className="flex items-center">
+            <Compass className="h-8 w-8 text-amber-600 dark:text-amber-500" />
+            <h1 className={`ml-2 text-xl md:text-2xl font-serif font-bold transition-colors ${scrolled ? 'text-white text-white' : 'text-white text-white'}`}>
+              Religious <span className="text-amber-600 dark:text-amber-500">Harmony</span>
+            </h1>
+          </div>
+          
+          <div className="flex items-center">
+            <button 
+              onClick={toggleDarkMode}
+              className="p-2 rounded-full mr-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              aria-label="Toggle dark mode"
+            >
+              {isDarkMode ? 
+                <Sun className="h-5 w-5 text-amber-500" /> : 
+                <Moon className="h-5 w-5 text-gray-700" />
+              }
+            </button>
+            
+            <nav className="hidden md:block">
+              <ul className="flex space-x-8">
+                <li>
+                  <a href="#" className={`font-medium transition-colors hover:text-amber-600 dark:hover:text-amber-500 ${scrolled ? 'text-gray-700 dark:text-gray-200' : 'text-gray-700 dark:text-white'}`}>Home</a>
+                </li>
+                <li>
+                  <a href="#sites" className={`font-medium transition-colors hover:text-amber-600 dark:hover:text-amber-500 ${scrolled ? 'text-gray-700 dark:text-gray-200' : 'text-gray-700 dark:text-white'}`}>Sacred Sites</a>
+                </li>
+                <li>
+                  <a href="#about" className={`font-medium transition-colors hover:text-amber-600 dark:hover:text-amber-500 ${scrolled ? 'text-gray-700 dark:text-gray-200' : 'text-gray-700 dark:text-white'}`}>About</a>
+                </li>
+              </ul>
+            </nav>
+            
+            <button 
+              className="md:hidden p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              onClick={toggleMenu}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? 
+                <X className={`h-6 w-6 ${scrolled ? 'text-gray-800 dark:text-white' : 'text-gray-800 dark:text-white'}`} /> : 
+                <Menu className={`h-6 w-6 ${scrolled ? 'text-gray-800 dark:text-white' : 'text-gray-800 dark:text-white'}`} />
+              }
+            </button>
+          </div>
+        </div>
       </div>
       
-      {/* Content */}
-      <div className="container mx-auto px-4 z-10 text-center">
-        <h1 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6 animate-fade-in">
-          Religious <span className="text-amber-400">Harmony</span> in India
-        </h1>
-        <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-8 animate-fade-in-delay">
-          Explore the diverse sacred sites that showcase India's rich tapestry of faiths and traditions.
-        </p>
-        <button 
-          onClick={scrollToSites}
-          className="px-8 py-3 bg-amber-600 text-white font-medium rounded-full hover:bg-amber-700 transition duration-300 animate-fade-in-delay-2"
-        >
-          Discover Sacred Sites
-        </button>
-      </div>
-      
-      {/* Scroll indicator */}
-      <div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer z-10"
-        onClick={scrollToSites}
-      >
-        <ChevronDown className="h-8 w-8 text-white" />
-      </div>
-    </div>
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="md:hidden bg-white dark:bg-gray-900 shadow-lg">
+          <ul className="py-4 px-6 space-y-4">
+            <li>
+              <a 
+                href="#" 
+                className="block font-medium text-gray-800 dark:text-white hover:text-amber-600 dark:hover:text-amber-500"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a 
+                href="#sites" 
+                className="block font-medium text-gray-800 dark:text-white hover:text-amber-600 dark:hover:text-amber-500"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Sacred Sites
+              </a>
+            </li>
+            <li>
+              <a 
+                href="#about" 
+                className="block font-medium text-gray-800 dark:text-white hover:text-amber-600 dark:hover:text-amber-500"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About
+              </a>
+            </li>
+          </ul>
+        </div>
+      )}
+    </header>
   );
 };
 

@@ -47,15 +47,7 @@ const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
         {site.religion}
       </div>
 
-      {/* Image */}
-      <div className="relative h-64 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-          style={{ backgroundImage: `url(${site.image})` }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-60"></div>
-        </div>
-      </div>
+
 
       {/* Content */}
       <div className="p-5 relative z-20">

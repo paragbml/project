@@ -9,12 +9,12 @@ interface ReligiousSite {
   religion: string;
   image: string;
   threeDViewLink: string;
-  detailedInfo?: string; // Make detailedInfo optional here
+  detailedInfo?: string;
 }
 
 interface SiteCardProps {
   site: ReligiousSite;
-  onViewDetails: (site: ReligiousSite) => void; // Receive the function
+  onViewDetails: (site: ReligiousSite) => void;
 }
 
 const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
@@ -44,7 +44,6 @@ const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
       className="relative h-full rounded-xl overflow-hidden shadow-lg transition-all duration-500 transform hover:-translate-y-2 group bg-white/30 dark:bg-gray-800/30 backdrop-blur-md cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      onClick={() => onViewDetails(site)} // Apply onClick here
     >
       {/* Religion Tag */}
       <div className={`absolute top-4 left-4 z-10 ${getReligionColor(site.religion)} text-white text-xs font-bold px-3 py-1 rounded-full`}>
@@ -68,11 +67,14 @@ const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
         <p className="text-sm line-clamp-3 mb-4 text-gray-700 dark:text-gray-300">{site.description}</p>
 
         {/* Buttons */}
-        <div className="flex space-x-2">
+        <div className="flex space-x-2 z-20 relative"> {/* Add z-index and make it relative */}
           <a
             href={`/sites/${site.id}`}
             className="flex-1 flex items-center justify-center py-2 px-4 bg-amber-600/90 hover:bg-amber-700 text-white text-sm font-medium rounded-md transition-colors backdrop-blur-sm"
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e) => {
+              e.stopPropagation();
+              onViewDetails(site); // Call onViewDetails here for the button
+            }}
           >
             <Info className="h-4 w-4 mr-2" />
             View Details
@@ -93,6 +95,7 @@ const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
       {/* Hover Overlay */}
       <div
         className={`absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6 transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}
+        style={{ pointerEvents: isHovered ? 'auto' : 'none' }} {/* Control pointer events */}
       >
         <h3 className="text-2xl font-bold text-white">{site.name}</h3>
         <p className="text-amber-400 mb-4">{site.location}</p>

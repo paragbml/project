@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Info, Cube } from 'lucide-react';
 
 interface ReligiousSite {
@@ -18,6 +18,8 @@ interface SiteCardProps {
 }
 
 const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   const getReligionColor = (religion: string) => {
     switch (religion.toLowerCase()) {
       case 'hinduism':
@@ -37,9 +39,17 @@ const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
     }
   };
 
+  const overlayStyle = {
+    pointerEvents: 'none',
+    opacity: isHovered ? 1 : 0,
+    display: isHovered ? 'flex' : 'none', // Forcefully hide when not hovered
+  };
+
   return (
     <div
-      className="relative h-full rounded-xl overflow-hidden shadow-lg transition-all duration-500 transform bg-white/30 dark:bg-gray-800/30 backdrop-blur-md cursor-pointer"
+      className="relative h-full rounded-xl overflow-hidden shadow-lg transition-all duration-500 transform hover:-translate-y-2 group bg-white/30 dark:bg-gray-800/30 backdrop-blur-md cursor-pointer"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       onClick={() => onViewDetails(site)}
     >
       {/* Religion Tag */}
@@ -50,7 +60,7 @@ const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
       {/* Image */}
       <div className="relative h-64 overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center transition-transform duration-700"
+          className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
           style={{ backgroundImage: `url(${site.image})` }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-60"></div>
@@ -86,7 +96,14 @@ const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
         </div>
       </div>
 
-      {/* Removed Hover Overlay Entirely */}
+      {/* Hover Overlay - Forcefully Hidden When Not Hovered */}
+      <div
+        className={`absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6 transition-opacity duration-300`}
+        style={overlayStyle}
+      >
+        <h3 className="text-2xl font-bold text-white">{site.name}</h3>
+        <p className="text-amber-400 mb-4">{site.location}</p>
+      </div>
     </div>
   );
 };

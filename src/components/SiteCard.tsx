@@ -62,16 +62,16 @@ const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
       </div>
 
       {/* Content */}
-      <div className="p-5 relative z-10"> {/* Added relative z-10 to the content */}
+      <div className="p-5 relative z-20"> {/* Increased z-index of content */}
         <h2 className="text-xl font-serif font-bold mb-2 text-gray-900 dark:text-white">{site.name}</h2>
         <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">{site.location}</p>
         <p className="text-sm line-clamp-3 mb-4 text-gray-700 dark:text-gray-300">{site.description}</p>
 
-        {/* Buttons */}
-        <div className="flex space-x-2">
+        {/* Buttons with even higher z-index */}
+        <div className="flex space-x-2 relative z-30">
           <a
             href={`/sites/${site.id}`}
-            className="flex-1 flex items-center justify-center py-2 px-4 bg-amber-600/90 hover:bg-amber-700 text-white text-sm font-medium rounded-md transition-colors backdrop-blur-sm"
+            className="flex-1 flex items-center justify-center py-2 px-4 bg-amber-600/90 hover:bg-amber-700 text-white text-sm font-medium rounded-md transition-colors backdrop-blur-sm relative z-40"
             onClick={(e) => e.stopPropagation()}
           >
             <Info className="h-4 w-4 mr-2" />
@@ -81,7 +81,7 @@ const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
             href={site.threeDViewLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center py-2 px-4 bg-gray-200/80 hover:bg-gray-300 dark:bg-gray-700/80 dark:hover:bg-gray-600 text-gray-700 dark:text-white text-sm font-medium rounded-md transition-colors backdrop-blur-sm"
+            className="flex items-center justify-center py-2 px-4 bg-gray-200/80 hover:bg-gray-300 dark:bg-gray-700/80 dark:hover:bg-gray-600 text-gray-700 dark:text-white text-sm font-medium rounded-md transition-colors backdrop-blur-sm relative z-40"
             onClick={(e) => e.stopPropagation()}
           >
             <Cube className="h-4 w-4 mr-2" />

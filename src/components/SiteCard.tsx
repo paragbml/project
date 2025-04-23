@@ -9,7 +9,7 @@ interface ReligiousSite {
   religion: string;
   image: string;
   threeDViewLink: string;
-  detailsLink: string; // Add this line
+  detailsLink: string;
   detailedInfo?: string;
 }
 
@@ -31,7 +31,7 @@ const SiteCard: React.FC<SiteCardProps> = ({ site }) => {
   };
 
   return (
-    <div className="relative h-full rounded-xl overflow-hidden shadow-lg transition-all duration-500 transform group bg-white/30 dark:bg-gray-800/30 backdrop-blur-md">
+    <div className="relative h-full rounded-xl overflow-hidden shadow-lg transition-all duration-500 transform hover:-translate-y-2 bg-white/30 dark:bg-gray-800/30 backdrop-blur-md">
       {/* Religion Tag */}
       <div className={`absolute top-4 left-4 z-10 ${getReligionColor(site.religion)} text-white text-xs font-bold px-3 py-1 rounded-full`}>
         {site.religion}
@@ -40,7 +40,7 @@ const SiteCard: React.FC<SiteCardProps> = ({ site }) => {
       {/* Image */}
       <div className="relative h-64 overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+          className="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-110"
           style={{ backgroundImage: `url(${site.image})` }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-60"></div>

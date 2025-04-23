@@ -1,5 +1,5 @@
 import React from 'react';
-import { Info, Cube } from 'lucide-react';
+import { Info, CubeIcon } from 'lucide-react';
 
 interface ReligiousSite {
   id: string;
@@ -68,7 +68,7 @@ const SiteCard: React.FC<SiteCardProps> = ({ site }) => {
             rel="noopener noreferrer"
             className="flex items-center justify-center py-2 px-4 bg-gray-200/80 hover:bg-gray-300 dark:bg-gray-700/80 dark:hover:bg-gray-600 text-gray-700 dark:text-white text-sm font-medium rounded-md transition-colors backdrop-blur-sm"
           >
-            <Cube className="h-4 w-4 mr-2" />
+            <CubeIcon className="h-4 w-4 mr-2" />
             3D View
           </a>
         </div>

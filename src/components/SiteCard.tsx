@@ -53,7 +53,7 @@ const SiteCard: React.FC<SiteCardProps> = ({ site }) => {
         <p className="text-sm text-amber-600 dark:text-amber-400 mb-2">{site.location}</p>
         <p className="text-sm line-clamp-3 mb-4 text-gray-700 dark:text-gray-300">{site.description}</p>
 
-        {/* Buttons */}
+        {/* Buttons - Now fully clickable */}
         <div className="flex space-x-2">
           <a
             href={site.detailsLink}

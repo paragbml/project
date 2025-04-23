@@ -39,8 +39,7 @@ const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
 
   return (
     <div
-      className="relative h-full rounded-xl overflow-hidden shadow-lg transition-all duration-500 transform hover:-translate-y-2 group bg-white/30 dark:bg-gray-800/30 backdrop-blur-md cursor-pointer"
-      onClick={() => onViewDetails(site)}
+      className="relative h-full rounded-xl overflow-hidden shadow-lg transition-all duration-500 transform hover:-translate-y-2 group bg-white/30 dark:bg-gray-800/30 backdrop-blur-md"
     >
       {/* Religion Tag */}
       <div className={`absolute top-4 left-4 z-10 ${getReligionColor(site.religion)} text-white text-xs font-bold px-3 py-1 rounded-full`}>
@@ -65,14 +64,16 @@ const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
 
         {/* Buttons */}
         <div className="flex space-x-2">
-          <a
-            href={`/sites/${site.id}`}
+          <button // Changed to button element
             className="flex-1 flex items-center justify-center py-2 px-4 bg-amber-600/90 hover:bg-amber-700 text-white text-sm font-medium rounded-md transition-colors backdrop-blur-sm"
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e) => {
+              e.stopPropagation();
+              onViewDetails(site);
+            }}
           >
             <Info className="h-4 w-4 mr-2" />
             View Details
-          </a>
+          </button>
           <a
             href={site.threeDViewLink}
             target="_blank"
@@ -85,8 +86,6 @@ const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
           </a>
         </div>
       </div>
-
-      {/* Removed Hover Overlay */}
     </div>
   );
 };

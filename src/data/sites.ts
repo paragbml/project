@@ -16,7 +16,7 @@ export const religiousSites: ReligiousSite[] = [
     name: "Basilica of Bom Jesus",
     religion: "Christianity",
     location: "Goa",
-    image: "https://images.pexels.com/photos/6348530/pexels-photo-6348530.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image: "https://s7ap1.scene7.com/is/image/incredibleindia/basilica-of-bom-jesus-goa-2-attr-hero?qlt=82&ts=1726735473814",
     description: "A UNESCO World Heritage Site, this church houses the mortal remains of St. Francis Xavier.",
     threeDViewLink: "#",
     detailedInfo: "The Basilica of Bom Jesus is a Roman Catholic basilica located in Goa, India. The basilica is part of the Churches and Convents of Goa UNESCO World Heritage Site. The church is located in Old Goa, which was the capital of Goa during the Portuguese rule. 'Bom Jesus' means 'Good Jesus' or 'Infant Jesus'. The basilica holds the mortal remains of St. Francis Xavier, who was one of the founding members of the Society of Jesus (Jesuit Order). Constructed in 1605, the basilica is an outstanding example of Baroque architecture in India. The church's facade combines elements of Doric, Corinthian, and composite styles, making it a unique architectural blend. It remains one of the best examples of baroque architecture in India and is the only church in Old Goa that is not plastered on the outside."

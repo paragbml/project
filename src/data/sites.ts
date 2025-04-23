@@ -9,7 +9,7 @@ export const religiousSites: ReligiousSite[] = [
     image: "https://images.pexels.com/photos/5458388/pexels-photo-5458388.jpeg?auto=compress&cs=tinysrgb&w=600",
     description: "The Golden Temple (Harmandir Sahib) is the holiest shrine in Sikhism, known for its stunning gold-plated exterior.",
     threeDViewLink: "https://www.google.com/maps/@31.6199713,74.8765445,3a,75y,225.77h,103.18t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgICU1qn6Qg!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com...",
-    detailLink: "/sites/golden-temple",
+    detailLink: "https://www.goldentempleamritsar.org/famous-temples-in-india/amritsar/golden-temple/history.php",
     detailedInfo: "The Golden Temple, also known as Sri Harmandir Sahib, is the holiest gurdwara..."
   },
   {

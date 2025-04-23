@@ -9,7 +9,8 @@ export const religiousSites: ReligiousSite[] = [
     image: "https://images.pexels.com/photos/5458388/pexels-photo-5458388.jpeg?auto=compress&cs=tinysrgb&w=600",
     description: "The Golden Temple (Harmandir Sahib) is the holiest shrine in Sikhism, known for its stunning gold-plated exterior.",
     threeDViewLink: "https://www.goldentempleamritsar.org/famous-temples-in-india/amritsar/golden-temple/360-degree-view.php",
-    detailedInfo: "The Golden Temple, also known as Sri Harmandir Sahib, is the holiest gurdwara and the most important pilgrimage site of Sikhism. Located in Amritsar, Punjab, the temple is built around a man-made pool (sarovar) that was completed by Guru Ram Das in 1577. The temple itself was designed by the fifth Sikh Guru, Guru Arjan, who had the cornerstone laid by the Muslim Sufi saint Mir Mian Mohammed. This gesture symbolized the inclusivity and harmony that Sikhism promotes. The four entrances (representing the four directions) signify that people from all walks of life are equally welcome. The temple's lower level is made of marble with intricate floral and animal motifs, while the upper level is covered in gold leaf, which gives it its distinctive appearance and English name."
+    detailsLink: "/golden-temple", // Add this
+    detailedInfo: "..." // keep existing
   },
   {
     id: "basilica-of-bom-jesus",
@@ -37,3 +38,5 @@ export const religiousSites: ReligiousSite[] = [
     religion: "Islam",
     location: "Mumbai, Maharashtra",
     image: "https://t3.ftcdn.net/jpg/03/53/42/98/360_F_353429872_tuQz6
+  // Add detailsLink to all other sites similarly
+];

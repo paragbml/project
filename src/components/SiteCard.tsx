@@ -62,12 +62,12 @@ const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
       </div>
 
       {/* Content */}
-      <div className="p-5 relative z-20"> {/* Increased z-index of content */}
+      <div className="p-5 relative z-20">
         <h2 className="text-xl font-serif font-bold mb-2 text-gray-900 dark:text-white">{site.name}</h2>
         <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">{site.location}</p>
         <p className="text-sm line-clamp-3 mb-4 text-gray-700 dark:text-gray-300">{site.description}</p>
 
-        {/* Buttons with even higher z-index */}
+        {/* Buttons */}
         <div className="flex space-x-2 relative z-30">
           <a
             href={`/sites/${site.id}`}
@@ -90,9 +90,9 @@ const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
         </div>
       </div>
 
-      {/* Hover Overlay */}
+      {/* Conditional Hover Overlay Opacity */}
       <div
-        className={`absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6 transition-opacity duration-300 group-hover:opacity-100`}
+        className={`absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6 transition-opacity duration-300 ${isHovered ? 'opacity-100' : ''}`}
         style={{ pointerEvents: 'none' }}
       >
         <h3 className="text-2xl font-bold text-white">{site.name}</h3>

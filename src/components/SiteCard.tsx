@@ -9,11 +9,12 @@ interface ReligiousSite {
   religion: string;
   image: string;
   threeDViewLink: string;
+  detailedInfo?: string; // Make detailedInfo optional here
 }
 
 interface SiteCardProps {
   site: ReligiousSite;
-  onViewDetails: (site: ReligiousSite) => void;
+  onViewDetails: (site: ReligiousSite) => void; // Receive the function
 }
 
 const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
@@ -39,11 +40,11 @@ const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
   };
 
   return (
-    <div 
+    <div
       className="relative h-full rounded-xl overflow-hidden shadow-lg transition-all duration-500 transform hover:-translate-y-2 group bg-white/30 dark:bg-gray-800/30 backdrop-blur-md cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      onClick={() => onViewDetails(site)}
+      onClick={() => onViewDetails(site)} // Apply onClick here
     >
       {/* Religion Tag */}
       <div className={`absolute top-4 left-4 z-10 ${getReligionColor(site.religion)} text-white text-xs font-bold px-3 py-1 rounded-full`}>
@@ -52,7 +53,7 @@ const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
 
       {/* Image */}
       <div className="relative h-64 overflow-hidden">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
           style={{ backgroundImage: `url(${site.image})` }}
         >
@@ -68,7 +69,7 @@ const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
 
         {/* Buttons */}
         <div className="flex space-x-2">
-          <a 
+          <a
             href={`/sites/${site.id}`}
             className="flex-1 flex items-center justify-center py-2 px-4 bg-amber-600/90 hover:bg-amber-700 text-white text-sm font-medium rounded-md transition-colors backdrop-blur-sm"
             onClick={(e) => e.stopPropagation()}
@@ -76,7 +77,7 @@ const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
             <Info className="h-4 w-4 mr-2" />
             View Details
           </a>
-          <a 
+          <a
             href={site.threeDViewLink}
             target="_blank"
             rel="noopener noreferrer"
@@ -90,7 +91,7 @@ const SiteCard: React.FC<SiteCardProps> = ({ site, onViewDetails }) => {
       </div>
 
       {/* Hover Overlay */}
-      <div 
+      <div
         className={`absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6 transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}
       >
         <h3 className="text-2xl font-bold text-white">{site.name}</h3>
